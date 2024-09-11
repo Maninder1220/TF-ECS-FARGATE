@@ -42,6 +42,9 @@ jobs:
     - name: 'Terraform Validate'
       run: terraform validate
 
+    - name: 'Check Current Directory'
+      run: pwd  # This will output the current directory in the pipeline logs
+
     - name: 'Terraform Plan'
       run: terraform plan
 
