@@ -33,6 +33,9 @@ jobs:
       with:
           terraform_version: ${{ env.TF_VERSION }}
 
+    - name: 'Check Current Directory'
+      run: pwd  # This will output the current directory in the pipeline logs
+
     - name: 'Terraform Init'
       working-directory: /home/runner/work/TF-ECS-FARGATE/IaC/InfraStructure/Root
       run: terraform init
@@ -44,9 +47,6 @@ jobs:
     - name: 'Terraform Validate'
       working-directory: /home/runner/work/TF-ECS-FARGATE/IaC/InfraStructure/Root
       run: terraform validate
-
-    - name: 'Check Current Directory'
-      run: pwd  # This will output the current directory in the pipeline logs
 
     - name: 'Terraform Plan'
       working-directory: /home/runner/work/TF-ECS-FARGATE/IaC/InfraStructure/Root
