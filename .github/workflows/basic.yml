@@ -34,20 +34,25 @@ jobs:
           terraform_version: ${{ env.TF_VERSION }}
 
     - name: 'Terraform Init'
+      working-directory: /home/mone/Journey/ProJs/Prep/DevOps-Task/TF-ECS-FARGATE/IaC/InfraStructure/Root
       run: terraform init
 
     - name: 'Terraform Format'
+      working-directory: /home/mone/Journey/ProJs/Prep/DevOps-Task/TF-ECS-FARGATE/IaC/InfraStructure/Root
       run: terraform fmt
 
     - name: 'Terraform Validate'
+      working-directory: /home/mone/Journey/ProJs/Prep/DevOps-Task/TF-ECS-FARGATE/IaC/InfraStructure/Root
       run: terraform validate
 
     - name: 'Check Current Directory'
       run: pwd  # This will output the current directory in the pipeline logs
 
     - name: 'Terraform Plan'
+      working-directory: /home/mone/Journey/ProJs/Prep/DevOps-Task/TF-ECS-FARGATE/IaC/InfraStructure/Root
       run: terraform plan
 
     - name: 'Terraform Apply'
+      working-directory: /home/mone/Journey/ProJs/Prep/DevOps-Task/TF-ECS-FARGATE/IaC/InfraStructure/Root
       if: github.ref == 'refs/heads/main'
       run: terraform apply --auto-approve
