@@ -24,13 +24,13 @@ variable "ecs_cluster" {}
 # SERVICE
 variable "ecs_service" {}
 
-variable "cluster_id" {}
+# variable "cluster_id" {}    #
 
-variable "task_definition_arn" {}
+# variable "task_definition_arn" {}   #
 
-variable "public_subnet_id" {}
+# variable "public_subnet_id" {}  #
 
-variable "repository_url" {}
+# variable "repository_url" {}  #
 
-variable "ecs_task_execution_role_arn" {}
+# variable "ecs_task_execution_role_arn" {}  #
 

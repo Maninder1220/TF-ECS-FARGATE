@@ -50,9 +50,9 @@ jobs:
 
     - name: 'Terraform Plan'
       working-directory: /home/runner/work/TF-ECS-FARGATE/TF-ECS-FARGATE/IaC/InfraStructure/Root
-      run: terraform plan
+      run: terraform plan -out=tfplan
 
     - name: 'Terraform Apply'
       working-directory: /home/runner/work/TF-ECS-FARGATE/TF-ECS-FARGATE/IaC/InfraStructure/Root
       if: github.ref == 'refs/heads/main'
-      run: terraform apply --auto-approve
+      run: terraform apply --auto-approve tfplan
