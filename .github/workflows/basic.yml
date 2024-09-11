@@ -43,8 +43,8 @@ jobs:
       run: terraform validate
 
     - name: 'Terraform Plan'
-      run: terraform plan -out=tfplan
+      run: terraform plan
 
     - name: 'Terraform Apply'
       if: github.ref == 'refs/heads/main'
-      run: terraform apply -auto-approve tfplan
+      run: terraform apply --auto-approve
