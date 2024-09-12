@@ -34,7 +34,7 @@ jobs:
           terraform_version: ${{ env.TF_VERSION }}
 
     - name: 'Check Current Directory'
-      run: pwd  # This will output the current directory in the pipeline logs
+      run: pwd  # This will output the current directory
 
     - name: 'Terraform Init'
       working-directory: /home/runner/work/TF-ECS-FARGATE/TF-ECS-FARGATE/IaC/InfraStructure/Root
