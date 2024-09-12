@@ -11,5 +11,5 @@ terraform {
 
 provider "aws" {
   region = "ap-south-1"      # Mumbai
-  profile = "Devops-User"
+  profile = "Devops-User"    # Non-Root Acc
 }
