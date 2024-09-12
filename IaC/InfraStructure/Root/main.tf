@@ -60,20 +60,6 @@ module "nacl" {
   public_subnet_id = module.subnets.public_subnet_id
 }
 
-
-# EC2 KEY PAIR
-module "key_pair" {
-  source = "../Module/ec2_keypair"
-}
-
-# EC2 - Public Subnet
-module "ec2_instance" {
-  source = "../Module/ec2"
-  public_key = module.key_pair.public_key
-  public_subnet_id = module.subnets.public_subnet_id
-  sg_id = module.security_group.sg_id
-}
-
 # IAM USER
 module "iam" {
   source = "../Module/iam-role"
