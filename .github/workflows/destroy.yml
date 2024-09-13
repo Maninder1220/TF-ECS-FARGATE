@@ -21,12 +21,7 @@ jobs:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ${{ env.AWS_REGION }}
-
-    - name: 'Set up Terraform'
-      uses: hashicorp/setup-terraform@v1
-      with:
-        terraform_version: ${{ env.TF_VERSION }}
-
+        
     - name: 'Terraform Init'
       working-directory: /home/runner/work/TF-ECS-FARGATE/TF-ECS-FARGATE/IaC/InfraStructure/Root
       run: terraform init
