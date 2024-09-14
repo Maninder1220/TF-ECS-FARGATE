@@ -51,8 +51,7 @@ module "security_group" {
   vpc_id = module.vpc.vpc_id
 }
 
-
-# NACL   NEED CHANGES HERE
+# NACL
 module "nacl" {
   source = "../Module/nacl"
   vpc_id = module.vpc.vpc_id
@@ -60,17 +59,25 @@ module "nacl" {
   public_subnet_id = module.subnets.public_subnet_id
 }
 
+# # # # # Orchestration # # # # #
+
+
 # IAM USER
 module "iam" {
   source = "../Module/iam-role"
   username    = var.username
 }
 
-
 # ECR
 module "ecr" {
   source = "../Module/ecr"
   ecr_repo_name = var.ecr_repo_name
+}
+
+# ECS CLUSTER
+module "ecs_cluster" {
+  source = "../Module/ecs"
+  ecs_cluster = var.ecs_cluster
 }
 
 # TASK DEFINATION
@@ -79,12 +86,6 @@ module "task-defination" {
   medusa_backend_task = var.medusa_backend_task
   repository_url = module.ecr.repository_url
   ecs_task_execution_role_arn = module.iam.ecs_task_execution_role_arn
-}
-
-# ECS CLUSTER
-module "ecs_cluster" {
-  source = "../Module/ecs"
-  ecs_cluster = var.ecs_cluster
 }
 
 # SERVICE

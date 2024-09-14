@@ -17,9 +17,6 @@ GitHub Repo : https://github.com/Maninder1220/TF-ECS-FARGATE.git
 - Ubuntu/Git
 - PostgreSQL (YAML) | ACTIVE AND RUNNING | sudo systemctl status postgresql 
 
-- Postgres Setting User and Pass | Create ROLE | Create DATABASE | Grant PERMESSION
-    - mone
-    - mone@69
 
 
 

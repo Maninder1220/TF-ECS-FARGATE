@@ -160,5 +160,7 @@
       This file will contain the configuration for managing your AWS ECR repositories.
     
     - Task Defination
+      This defines literally how everythings going to run
 
     - ECS
+      This tells where and how it need to run

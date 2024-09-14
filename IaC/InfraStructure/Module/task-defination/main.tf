@@ -3,7 +3,7 @@ resource "aws_ecs_task_definition" "ecs_task" {
   network_mode             = "awsvpc"
   requires_compatibilities = ["FARGATE"]
   
-  # Overall CPU and memory
+  # Overall Task Level CPU and memory
   memory                   = "16384"  # 15GB
   cpu                      = "4096"   # 8CPU
 
