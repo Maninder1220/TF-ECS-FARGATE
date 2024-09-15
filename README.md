@@ -1,4 +1,4 @@
-# TF-ECS-FARGATE | Status : Complete
+# TF-ECS-FARGATE | Status : Completed
 
 # AIM
 Design the IaC (Terraform, Aws ECS/Fargate) for Medusa open source headless commerce platform backend , CD pipeline using GitHub Actions
